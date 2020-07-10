@@ -143,16 +143,24 @@ function checkActionsID(req, res, next) {
 }
 
 function checkActionsBody(req, res, next) {
-  const actionDesciption = req.body.description;
+  const actionDescription = req.body.description;
   const actionNotes = req.body.notes;
+  if (!actionDescription || !actionNotes) {
+    res.status(400).json({
+      message: "Description and notes are required fields",
+    });
+  }
   if (
-    (!actionDesciption && typeof String) ||
-    actionDesciption.length > 128 ||
-    (!actionNotes && typeof String)
+    typeof actionDescription !== "string" ||
+    typeof actionNotes !== "string"
   ) {
     res.status(400).json({
-      message:
-        "Enter valid text for description and notes. Description must be less than 128 characters",
+      message: "Enter valid text for description and notes",
+    });
+  }
+  if (actionDescription.length > 128) {
+    res.status(400).json({
+      message: "Description must be less than 128 characters",
     });
   } else {
     next();

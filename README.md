@@ -40,12 +40,12 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ x ] Mention two parts of Express that you learned about this week.
 
-Thi week in Express, I learned a couple of new concepts. Routing and REST (REpresentational State Transfer). By using Routing, we can map each request to the appropriate handler based on the URL and the HTTP method used. While REST is not a standard, the widely agreed-upon set of principles and constraints serve as guidelines/recommendations. 
+This week in Express, I learned a couple of new concepts. Routing and REST (REpresentational State Transfer). By using Routing, we can map each request to the appropriate handler based on the URL and the HTTP method used. While REST is not a standard, the widely agreed-upon set of principles and constraints serve as guidelines/recommendations. 
 
 
 - [ x ] Describe Middleware?
 
-Middleware provides a way to extend the features provided by the Express framework, It allows us to change/modify request details before sending the off. Middleware is implemented as small functions that handle one part of our application. Things like authentication/validation and logging are often handled by Middleware. It also provides an easy way to add modularity to our code.
+Middleware provides a way to extend the features provided by the Express framework, it allows us to change/modify request details before sending them off. Middleware is implemented as small functions that handle one part of our application. Things like authentication/validation and logging are often handled by Middleware. It also provides an easy way to add modularity to our code.
 
 
 - [ x ] Describe a Resource?

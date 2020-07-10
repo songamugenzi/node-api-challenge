@@ -119,9 +119,14 @@ function checkID(req, res, next) {
 function checkProjectBody(req, res, next) {
   const projectName = req.body.name;
   const projectDescription = req.body.description;
+  if (!projectName || !projectDescription) {
+    res.status(400).json({
+      message: "Name and description are required fields",
+    });
+  }
   if (
-    (!projectName && typeof String) ||
-    (!projectDescription && typeof String)
+    typeof projectName !== "string" ||
+    typeof projectDescription !== "string"
   ) {
     res.status(400).json({
       message: "Enter valid text for name and description",

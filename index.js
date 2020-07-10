@@ -24,8 +24,8 @@ server.use(morgan("combined"));
 const ProjectsRouter = require("./routers/projects-router.js");
 const ActionsRouter = require("./routers/actions-router.js");
 
-server.use("./api/projects", ProjectsRouter);
-server.use("./api/projects", ActionsRouter);
+server.use("/api/projects", ProjectsRouter);
+server.use("/api/projects", ActionsRouter);
 
 const port = process.env.PORT || 5000;
 

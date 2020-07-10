@@ -38,15 +38,30 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
-- [ ] Mention two parts of Express that you learned about this week.
+- [ x ] Mention two parts of Express that you learned about this week.
 
-- [ ] Describe Middleware?
+This week in Express, I learned a couple of new concepts. Routing and REST (REpresentational State Transfer). By using Routing, we can map each request to the appropriate handler based on the URL and the HTTP method used. While REST is not a standard, the widely agreed-upon set of principles and constraints serve as guidelines/recommendations. 
 
-- [ ] Describe a Resource?
 
-- [ ] What can the API return to help clients know if a request was successful?
+- [ x ] Describe Middleware?
 
-- [ ] How can we partition our application into sub-applications?
+Middleware provides a way to extend the features provided by the Express framework, it allows us to change/modify request details before sending them off. Middleware is implemented as small functions that handle one part of our application. Things like authentication/validation and logging are often handled by Middleware. It also provides an easy way to add modularity to our code.
+
+
+- [ x ] Describe a Resource?
+
+A resource can be anything from a user, a post or a project. Each resource should have it's own unique URL which is defined by using the resource path alongside HTTP methods.
+
+
+- [ x ] What can the API return to help clients know if a request was successful?
+
+Successful requests usually return a 200 OK status code to let clients know the status of their request.
+
+
+- [ x ] How can we partition our application into sub-applications?
+
+We can partition an app into sub-applications by splitting our code into models, routers, and importing them as needed.
+
 
 ## Minimum Viable Product
 

@@ -12,3 +12,29 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
+
+const express = require("express");
+require("dotenv").config();
+const morgan = require("morgan");
+
+const server = express();
+server.use(express.json());
+server.use(morgan("combined"));
+
+const ProjectsRouter = require("./routers/projects-router.js");
+const ActionsRouter = require("./routers/actions-router.js");
+
+server.use("./api/projects", ProjectsRouter);
+server.use("./api/projects", ActionsRouter);
+
+const port = process.env.PORT || 5000;
+
+server.get("/", (req, res) => {
+  res.status(200).json({
+    message: "You have successfully connected to my Node API sprint",
+  });
+});
+
+server.listen(port, () => {
+  console.log(`\n*** Server running on http://localhost:${port} ***\n`);
+});
